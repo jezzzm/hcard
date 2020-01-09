@@ -11,6 +11,7 @@ const StyledData = styled.p`
     display: inline-block;
   }
   > span {
+    margin-bottom: -0.3em;
     border: 0;
     font-family: Garamond, Georgia, serif;
     height: 20px;

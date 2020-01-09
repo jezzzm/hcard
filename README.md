@@ -3,7 +3,7 @@
 - > started 1:30pm 9th Jan
 - > worked until 4:30pm
 - > picked up again 8pm
-- > finished 10:30px
+- > finished 10:30pm
 - > total 5.5h
 
 ## steps taken

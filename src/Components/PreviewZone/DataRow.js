@@ -12,6 +12,7 @@ const StyledData = styled.p`
   }
   > span {
     width: calc(100% - 80px);
+    margin-bottom: -0.3em;
     white-space: nowrap;
     display: inline-block;
     overflow-x: scroll;

@@ -12,7 +12,6 @@ const StyledPreviewZone = styled.section`
 const StyledPreviewContainer = styled.article`
   margin: 8em auto 0;
   max-width: 600px;
-  box-shadow: 0 3px 2px ${colors.lightGrey};
   h4 {
     text-align: right;
     color: ${colors.lightGrey};
@@ -43,6 +42,7 @@ const StyledPreviewContainer = styled.article`
   .content {
     background: white;
     padding: 1.5em;
+    box-shadow: 0 3px 2px ${colors.lightGrey};
   }
   @media (max-width: ${breakpoints.md}) {
     margin-top: 0;
