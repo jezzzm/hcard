@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import InputContainer from "./InputContainer";
 import InputField from "./InputField";
+import ButtonUpload from "./ButtonUpload";
 
 const StyledInputZone = styled.section`
   background: pink;
@@ -84,6 +85,10 @@ const InputZone = props => {
           inputChange={props.inputChange}
           inputType="text"
         />
+      </InputContainer>
+      <InputContainer>
+        <ButtonUpload fileChange={props.fileChange} />
+        <input type="button" value="Create hCard" />
       </InputContainer>
     </StyledInputZone>
   );

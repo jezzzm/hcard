@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-import InputField from "./InputField";
 
 const StyledContainer = styled.div`
   margin: 2em 0;

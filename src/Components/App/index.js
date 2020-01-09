@@ -34,7 +34,7 @@ const INITIAL_STATE = {
   familyName: "",
   email: "", //input type: email
   phone: "", //input type: tel (browser finds saved phone numbers for autocomplete)
-  photo: "", //input type: file (for upload)
+  photo: null, //input type: file (for upload)
   streetNumber: "",
   street: "",
   locality: "", //aka suburb
@@ -54,12 +54,21 @@ class App extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  _handleFileChange = e => {
+    e.preventDefault();
+    this.setState({ photo: URL.createObjectURL(e.target.files[0]) });
+  };
+
   render() {
     const data = this.state;
     return (
       <StyledApp className="App">
         <StyledMain>
-          <InputZone {...data} inputChange={this._handleChange} />
+          <InputZone
+            {...data}
+            inputChange={this._handleChange}
+            fileChange={this._handleFileChange}
+          />
           <PreviewZone {...data} />
         </StyledMain>
       </StyledApp>
