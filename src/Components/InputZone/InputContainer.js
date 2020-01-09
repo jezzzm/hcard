@@ -4,17 +4,21 @@ import InputField from "./InputField";
 
 const StyledContainer = styled.div`
   margin: 2em 0;
-  > p {
-    color: gray;
-    text-transform: uppercase;
+  > span {
     border-bottom: 1px solid gray;
-    padding-bottom: 0.5em;
+    padding-bottom: 0.2em;
+    color: #666;
+    display: block;
+    font-size: 0.6em;
+  }
+  > div {
+    margin: 1em 0;
   }
 `;
 
 const InputContainer = props => (
   <StyledContainer>
-    <p>{props.containerTitle}</p>
+    <span>{props.containerTitle}</span>
     <div>{props.children}</div>
   </StyledContainer>
 );

@@ -20,6 +20,13 @@ const StyledMain = styled.main`
     width: 50%;
     padding: 2rem;
   }
+
+  span {
+    text-transform: uppercase;
+    color: #444;
+    font-size: 0.7em;
+    font-family: Helvetica, Arial, sans-serif;
+  }
 `;
 
 const INITIAL_STATE = {

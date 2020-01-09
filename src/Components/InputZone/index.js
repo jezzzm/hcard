@@ -14,29 +14,29 @@ const InputZone = props => {
       <InputContainer containerTitle="personal details">
         <InputField
           fieldName="givenName"
-          labelName="First Name"
+          labelText="First Name"
           placeholderText="e.g. Alex"
           inputChange={props.inputChange}
           inputType="text"
         />
         <InputField
           fieldName="familyName"
-          labelName="Surname"
+          labelText="Surname"
           placeholderText="e.g. Smith"
           inputChange={props.inputChange}
           inputType="text"
         />
         <InputField
           fieldName="email"
-          labelName="Email"
-          placeholderText="alex.smith@example.com"
+          labelText="Email"
+          placeholderText="e.g. alex.smith@example.com"
           inputChange={props.inputChange}
           inputType="email"
         />
         <InputField
           fieldName="phone"
-          labelName="Phone"
-          placeholderText="0400 000 000"
+          labelText="Phone"
+          placeholderText="e.g. 0400 000 000"
           inputChange={props.inputChange}
           inputType="tel"
         />
@@ -44,42 +44,42 @@ const InputZone = props => {
       <InputContainer containerTitle="address">
         <InputField
           fieldName="streetNumber"
-          labelName="House name or #"
+          labelText="House name or #"
           placeholderText="e.g. 3A"
           inputChange={props.inputChange}
           inputType="text"
         />
         <InputField
           fieldName="street"
-          labelName="Street"
+          labelText="Street"
           placeholderText="e.g. George Street"
           inputChange={props.inputChange}
           inputType="text"
         />
         <InputField
           fieldName="locality"
-          labelName="Suburb"
+          labelText="Suburb"
           placeholderText="e.g. Sydney"
           inputChange={props.inputChange}
           inputType="text"
         />
         <InputField
           fieldName="region"
-          labelName="State"
+          labelText="State"
           placeholderText="e.g. NSW"
           inputChange={props.inputChange}
           inputType="text"
         />
         <InputField
           fieldName="postcode"
-          labelName="Postcode"
+          labelText="Postcode"
           placeholderText="e.g. 2000"
           inputChange={props.inputChange}
           inputType="text"
         />
         <InputField
           fieldName="country"
-          labelName="Country"
+          labelText="Country"
           placeholderText="e.g. Australia"
           inputChange={props.inputChange}
           inputType="text"
