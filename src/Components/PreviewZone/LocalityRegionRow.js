@@ -11,28 +11,26 @@ const StyledData = styled.p`
     display: inline-block;
   }
   > span {
-    width: calc(100% - 80px);
-    white-space: nowrap;
-    display: inline-block;
-    overflow-x: scroll;
     border: 0;
     font-family: Garamond, Georgia, serif;
     height: 20px;
     font-size: 1em;
     color: ${colors.copy};
-    &::-webkit-scrollbar {
-      display: none;
-    }
   }
 `;
 
-const DataRow = props => (
-  <StyledData>
-    <label>
-      <span>{props.labelText}</span>
-    </label>
-    <span className={props.hCardProp}>{props.dataText}</span>
-  </StyledData>
-);
+const LocalityRegionRow = props => {
+  const { labelText, localityText, regionText } = props;
+  return (
+    <StyledData>
+      <label>
+        <span>{labelText}</span>
+      </label>
+      {localityText && <span className="locality">{localityText}</span>}
+      {localityText && regionText && `, `}
+      {regionText && <span className="region">{regionText}</span>}
+    </StyledData>
+  );
+};
 
-export default DataRow;
+export default LocalityRegionRow;

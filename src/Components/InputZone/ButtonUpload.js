@@ -1,34 +1,38 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "@emotion/styled";
+import { colors } from "../../constants";
 
 const StyledLabel = styled.label`
+  display: inline-block;
   input[type="file"] {
-    position: absolute;
-    opacity: 0;
-    z-index: 0;
-    max-width: 100%;
-    height: 100%;
-    display: block;
+    display: none;
   }
   button {
-    color: white;
-    background: #444;
-    padding: 1em 3em;
-    font-family: Garamond, Georgia, serif;
+    background: ${colors.midGrey};
+    box-shadow: 0 2px ${colors.darkGrey};
+    transition: 0.1s box-shadow;
+    &:hover {
+      box-shadow: 0 2px transparent;
+    }
   }
 `;
 
-const ButtonUpload = props => (
-  <StyledLabel>
-    <input
-      type="file"
-      accept="image/*"
-      name="upload"
-      multiple={false}
-      onChange={props.fileChange}
-    />
-    <button>Upload Avatar</button>
-  </StyledLabel>
-);
+const ButtonUpload = props => {
+  const fileUpload = useRef(null);
+
+  return (
+    <StyledLabel>
+      <input
+        type="file"
+        accept="image/*"
+        name="upload"
+        multiple={false}
+        onChange={props.fileChange}
+        ref={fileUpload}
+      />
+      <button onClick={() => fileUpload.current.click()}>Upload Avatar</button>
+    </StyledLabel>
+  );
+};
 
 export default ButtonUpload;

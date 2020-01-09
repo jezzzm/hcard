@@ -3,9 +3,15 @@ import styled from "@emotion/styled";
 import InputContainer from "./InputContainer";
 import InputField from "./InputField";
 import ButtonUpload from "./ButtonUpload";
+import ButtonContainer from "./ButtonContainer";
+import ButtonSubmit from "./ButtonSubmit";
+import { colors } from "../../constants";
 
 const StyledInputZone = styled.section`
-  background: pink;
+  h1 {
+    color: ${colors.secondary};
+    font-size: 2em;
+  }
 `;
 
 const InputZone = props => {
@@ -86,10 +92,10 @@ const InputZone = props => {
           inputType="text"
         />
       </InputContainer>
-      <InputContainer>
+      <ButtonContainer>
         <ButtonUpload fileChange={props.fileChange} />
-        <input type="button" value="Create hCard" />
-      </InputContainer>
+        <ButtonSubmit hCardSubmit={props.hCardSubmit} />
+      </ButtonContainer>
     </StyledInputZone>
   );
 };

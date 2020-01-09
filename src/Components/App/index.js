@@ -3,7 +3,7 @@ import InputZone from "../InputZone";
 import PreviewZone from "../PreviewZone";
 
 import styled from "@emotion/styled";
-
+import { colors, breakpoints } from "../../constants";
 const StyledApp = styled.div`
   display: flex;
   align-items: center;
@@ -13,17 +13,23 @@ const StyledApp = styled.div`
 
 const StyledMain = styled.main`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1150px;
   width: 100%;
   display: flex;
   section {
     width: 50%;
-    padding: 2rem;
+    padding: 3em;
+  }
+  @media (max-width: ${breakpoints.md}) {
+    flex-direction: column;
+    section {
+      width: 100%;
+    }
   }
 
-  span {
+  label > span {
     text-transform: uppercase;
-    color: #444;
+    color: ${colors.secondary};
     font-size: 0.7em;
     font-family: Helvetica, Arial, sans-serif;
   }
@@ -55,8 +61,13 @@ class App extends Component {
   };
 
   _handleFileChange = e => {
-    e.preventDefault();
-    this.setState({ photo: URL.createObjectURL(e.target.files[0]) });
+    let path;
+    try {
+      path = URL.createObjectURL(e.target.files[0]);
+    } catch {
+      path = this.state.photo;
+    }
+    this.setState({ photo: path });
   };
 
   render() {
