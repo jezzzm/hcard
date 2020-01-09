@@ -42,14 +42,12 @@ INITIAL_STATE = {
   email: "", //input type: email
   phone: "", //input type: tel (browser finds saved phone numbers for autocomplete)
   photo: "", //input type: file (for upload)
-  address: {
-    number: "",
-    street: "",
-    locality: "", //aka suburb
-    region: "", //aka state
-    postcode: "",
-    country: ""
-  }
+  streetNumber: "",
+  street: "",
+  locality: "", //aka suburb
+  region: "", //aka state
+  postcode: "",
+  country: ""
 };
 ```
 
@@ -74,6 +72,12 @@ Because there is clear separation between the input zone and the preview zone, I
 
 ### **CSS in JS with @emotion/styled**
 
-When chatting with Matt at SydCSS last month, he mentioned that at Domain they're using CSS in JS. At that point I hadn't tried it out, so I resolved to learn it. My next project [storytime](https://github.com/jezzzm/storytime) was entirely styled in this method - I love it.
+When chatting with Matt at SydCSS last month, he mentioned that at Domain they're using CSS in JS. At that point I hadn't tried it out, so I resolved to learn it. My next project, [storytime](https://github.com/jezzzm/storytime), was entirely styled in this method - I love it.
 
 I figured it makes sense to use it again for this little project.
+
+### **managing state in this app**
+
+It's not a huge app and there are two clear places that need access to the same state: the input zone and the preview zone. Therefore it's simplest to store state within their immediate parent, in this case, the `App` component.
+
+Because there are many types of string state with similar interaction required, I decided to use a class-based component to take advantage of a single input change handler applied to all state entries. This could also be achieved with a function component using the hook `useState`, but I think the class implementation is less repetitive (more DRY).
