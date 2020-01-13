@@ -102,3 +102,13 @@ The small screen size breakpoint shifts all input fields to be on their own line
 ### **note on testing**
 
 Assumed not required as the instructions state there is a dedicated testing team.
+
+### **TODOs**
+
+NB. package.json updated to include testing libraries
+
+- extract styling away from React components -> componentname.style.js
+- where styling is applied to parents and children/descendants in one component:
+  - refactor nested CSS styling
+  - each separated into own component + styling?
+- tests?
