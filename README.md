@@ -103,7 +103,7 @@ The small screen size breakpoint shifts all input fields to be on their own line
 
 Assumed not required as the instructions state there is a dedicated testing team.
 
-### **TODOs**
+### **TODOs:**
 
 NB. package.json updated to include testing libraries
 
@@ -112,3 +112,7 @@ NB. package.json updated to include testing libraries
   - refactor nested CSS styling
   - each separated into own component + styling?
 - tests?
+- postcode and country on same line in preview: new component vs flag in existing to set to `display: inline-block` ? or `grid` the whole thing?
+- object destructuring of props for some components
+- font match not exact: confirm and import?
+- should preview be above input area on smaller screens? if so, override with flex property `order`
